@@ -39,11 +39,23 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Summary}
-Statistician and Data Scientist with a zeal for leveraging programing skills, theoretical knowledge, and practical knowledge to answer hard questions with big data. Looking for difficult problems to solve through thorough and thoughtful analysis.
+Statistician and Data Scientist with a zeal for leveraging programing and statistics to answer hard questions with big data. Looking for difficult problems to solve through thorough and thoughtful analysis.
 
-{\bf Specialties:} Nonparametric, Bayesian, and Classical statistics; Large Scale Data Mining; Machine Learning; Mathematical Optimization; Econometric Modeling; Microsimulation
+{\bf Specialties:} Nonparametric, Bayesian, and Classical Statistics; Large Scale Data Mining; Machine Learning; Mathematical Optimization; Econometric Modeling; Microsimulation
 \end{rSection}
 
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programing Languages 	& Python, Stata, SAS, R, SQL, Visual Basic, Some MATLAB \\
+Programing Tools   	    & Apache Spark, AWS, MapReduce, \LaTeX, Git, SVN \\
+
+\end{tabular}
+\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -63,6 +75,36 @@ Statistician and Data Scientist with a zeal for leveraging programing skills, th
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
+%   Selected Projects	
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Selected Projects}
+    \begin{itemize}
+        \item Used City of Chicago crime database to estimate weather's effect on citywide number of robberies.
+            \begin{itemize} 
+                \item Implemented Kernel and Poisson regressions on hourly crime counts across three years in R.
+                \item Models estimated change in robbery rate with temperature by hour and day of week.
+            \end{itemize}
+        \item Employed Bayesian Latent Dirichlet Allocation model to categorize Wikipedia articles by topics.
+            \begin{itemize} 
+                \item Utilized python Onlineldavb package to parse $12,800$ articles and estimate topic posterior distributions.   
+                \item Using topic weighting as a low dimensional representation of each article, fit k-medians \\clustering to group similar articles.
+            \end{itemize}
+        \item Built L2 regularized logistic regression model to predict sentiment across $1.5$ million tweets.
+            \begin{itemize} 
+                \item Parsed tweets into $4,000$ word/emoticon feature vector in parallel using pyspark.
+                \item Fit model with stochastic gradient descent, choosing optimal parameters via cross validation.
+            \end{itemize}
+        \item Created models to predict overall review score for RateBeer.com reviews based on description.
+            \begin{itemize} 
+                \item Built feature vector of tf-idf statistics of hashed words over 3 million review corpus.
+                \item Fit both random forest and gradient boosted trees using Spark MLLib on AWS.
+            \end{itemize}
+
+    \end{itemize} 
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
@@ -72,105 +114,47 @@ Statistician and Data Scientist with a zeal for leveraging programing skills, th
 \vspace{0.2em}
 
 {\bf Acumen, LLC} \hfill Burlingame, CA \\
-{\em Policy Associate} \hfill {\em August 2011 - August 2014} \vspace{0.3em} \\
-Worked closely with various federal agencies answering empirical questions using healthcare data.
+{\em Policy Associate} \hfill {\em August 2011 - August 2014} \vspace{0.3em} 
 \vspace{-0.2em}
 \begin{itemize} \itemsep -0.2em
-	\item Preformed data mining on large Medicare and Medicaid enrollment and payment data sets.
-    \item Built statistical and econometric models.
-    \item Developed statistical graphics to visualize trends in data.
-    \item Worked with clients to include subject specific knowledge in analysis and explicate results.
-    \item Selected Projects include:
+    \item Worked with various federal agencies studying healthcare public policy and epidemiology.
+	\item Preformed data mining and modeling on Medicare claims, enrollment, and provider datasets.
+    \item Programed extensively in Stata and SAS, with additional work in several other languages.
+    \item Project work included:
     \begin{itemize} \itemsep -0.2em
     	\item {\bf \em Market and Enrollment Projections of the Affordable Care 		Act}
         \begin{itemize} \itemsep -0.2em
-    		\item Developed microsimulation model that calculated effects of the law on a person level basis. 	
-            \item Employed multiple regression models to impute insurance takeup in novel circumstances. 
-            \item Predictions used to dictate allocation of \$25 billion in federal spending.
+    		\item Developed microsimulation model to estimate ACA's effect on each individual. 	
+            \item Employed series of probit regressions on person level variables to predict future enrollment. 
+            \item Forecast federal budget implications, guiding \$25 billion in federal spending.
     	\end{itemize}
     	\item {\bf \em Flu Vaccine Comparative Effectiveness}
         \begin{itemize} \itemsep -0.2em
-    		\item Carefully designed a test and control sample to mitigate exogenous confounding factors.
-            \item Implemented and tested several regression models to measure effectiveness while controlling for other independent factors, varying hazard, and mis-measurement of outcome.
-            \item Results published in epidemiology journal. 
+            \item Studying vaccine effectiveness inhibited by distinct populations receiving the vaccine, mismeasurment, and the variable latent infection risk. 
+    		\item Carefully designed comparable test and control cohort from Medicare enrollees.
+            \item Implemented and tested a number of regression models to account for remaining issues, including proportional hazard and measurement error models. 
     	\end{itemize}
-
-        \newpage
 
     	\item {\bf \em Financial Projections of Policy Reform}
         \begin{itemize} \itemsep -0.2em
     		\item Projected budget impact of Bipartisan Policy Center Medicare reform program.
-            \item Developed model for beneficiary level expenditures under numerous policy changes.
-            \item Bottom line estimates included in final report on the Domenici-Rivlin plan
+            \item Developed a log-normal mixture model to simulate beneficiary level expenditures.
+            \item Total net cost forecasts included in final report on the Domenici-Rivlin plan
     	\end{itemize}
         \item {\bf \em Active Surveillance of Flu Vaccine Safety}
         \begin{itemize} \itemsep -0.2em
-        	\item Tracked approximately 15 million yearly vaccinations in Medicare population.
-        	\item Provided FDA with an estimate of post vaccination hazard of Guillain-Barre syndrome.
-            \item Employed sequential probability test to signal when hazard was above historical levels.
+        	\item Tracked approximately 15 million yearly vaccinations in Medicare population for cases of Guillain-Barre syndrome.
+            \item Employed sequential probability test to signal when hazard was above historical levels as quickly as possible.
         \end{itemize}
     \end{itemize}
-\end{itemize}
-
-\vspace{0.4em}
-
-%----------------------------------------------
-
-{\bf The Institute for Mathematics and its Applications} \hfill Minneapolis, MN \\
-{\em Undergraduate Researcher} \hfill {\em June 2010 -– July 2010} \vspace{0.3em} \\
-Researched outstanding graph theoretic problems under mathematics and computer science professors. 
-\begin{itemize} \itemsep -0.2em
-	\item Proved novel results about pursuit evasion games.
-	\begin{itemize} \itemsep -0.2em
-		\item Gave talk on work at the Joint Mathematics Meeting.
-	\end{itemize}
-	\item Helped program algorithm to classify graphs with respect to games of cops and robbers.
 \end{itemize}
 \end{rSection}
 
 \vspace{0.4em}
-
-%----------------------------------------------
-
-%----------------------------------------------------------------------------------------
-%   Other Selected Projects	
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Other Selected Projects}
-    \begin{itemize}
-        \item Used City of Chicago crime database to estimate effect of weather on citywide robbery rate.
-            \begin{itemize} 
-                \item Tested both kernel regression and generalized linear regression models. 
-            \end{itemize}
-        \item Employed Bayesian Dirichlet allocation model to categorize Wikipedia articles by topic.
-            \begin{itemize} 
-                \item Fit k-medians clustering to group similar articles by subject based on sparse topic set.
-            \end{itemize}
-        \item Built reguarlized regression model to predict tweet sentiment and fit it with stochastic gradient descent.
-        \item Predicted overall beer review score based on review text content with random forests and gradient boosted trees. 
-
-    \end{itemize} \end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Technical Skills}
-
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Programing Languages 	& Python, Stata, SAS, R, SQL, Visual Basic, Some MATLAB \\
-Programing Tools   	    & Apache Spark, AWS, MapReduce, \LaTeX, Git, SVN \\
-Operating Systems 		& Linux, Windows, Mac OS  \\
-
-\end{tabular}
-
-
 
 %----------------------------------------------------------------------------------------
 %	Publications
 %----------------------------------------------------------------------------------------
-
-\end{rSection}
 
 \begin{rSection}{Publications}
 \begin{itemize}
@@ -183,9 +167,8 @@ Operating Systems 		& Linux, Windows, Mac OS  \\
 %   Misc	
 %----------------------------------------------------------------------------------------
 
-
 \begin{rSection}{Miscellaneous/Personal} 
-    Erdos Number of 3; has or will soon visit all but 4 of continuous 48 states; expert on Byzantine military history; former member of International Brotherhood of Teamsters; loves boardgames 
+    Erdos Number of 3; has or will soon visit all but 4 of continuous 48 states; expert on Byzantine military history; former member of International Brotherhood of Teamsters; avid board game player 
 \end{rSection}
 
 
