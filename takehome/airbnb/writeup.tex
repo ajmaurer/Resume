@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage[paper=letterpaper, margin=.5in]{geometry}
+\linespread{1.5}
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+
+%%% Packages
+% First four - AMS (american mathematical society). General math goodness. I use the align* enviorment in particular
+% multirow, multicol allow for certain kinds of tables
+% enumerate lets you determine the style of the counter for the enumerate enviorment
+% graphicx lets you include pictures
+% listings lets you stick in blocks of code
+% placeins defines "\FloatBarrier", which stops tables from moving around
+\usepackage{amsmath, amscd, amssymb, amsthm, multirow, multicol, enumerate, graphicx, listings, placeins} 
+\usepackage[final]{pdfpages}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\del}{\partial}
+\newcommand{\real}{\textrm{Re }}
+\newcommand{\imag}{\textrm{Im }}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+\newcommand{\sumk}{\sum_{k=1}^\infty}
+\newcommand{\sumj}{\sum_{j=1}^\infty}
+\newcommand{\sumn}{\sum_{n=0}^\infty}
+\newcommand{\summ}[2]{\sum_{k=#1}^{#2}}
+\newcommand{\sig}[1]{\sum_{#1 =1}^\infty}
+\newcommand{\un}[1]{\bigcup_{#1 =1}^\infty}
+\newcommand{\inter}[1]{\bigcap_{#1 =1}^\infty}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\ipxu}{\langle x,u_j \rangle}
+\newcommand{\uj}{\{u_j\}_{j=1}^\infty}
+\newcommand{\B}{\mathcal{B}}
+
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\cov}{\mathrm{Cov}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ST}{mbox{ s.t. }}
+
+\newcommand{\x}{\bf x}
+
+\newcommand{\Example}{\noindent {\bf Example. \quad} }
+\newcommand{\Proof}{\noindent {\bf Proof: \quad} }
+\newcommand{\Remark}{\noindent {\bf Remark. \quad} }
+\newcommand{\Remarks}{\noindent {\bf Remarks. \quad} }
+\newcommand{\Case}{\noindent {\underline{Case} \quad} }
+
+\newcommand{\st}{ \; \big | \:}
+
+\newcommand{\deuc}{d_{\mathrm euc}}
+\newcommand{\dtaxi}{d_{\mathrm taxi}}
+\newcommand{\ddisc}{d_{\mathrm disc}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\hwhead}[1]{#1 \hfill Aaron Maurer \vspace{2mm} \hrule \vspace{2mm}}
+
+\begin{document}
+\title{Take Home Challenge Writeup}
+\maketitle
+
+\section{Summary}
+Overall, there is no reason to believe that requiring guests to write a message of 140 or more characters to prospective hosts improves the Airbnb booking experience. Guests in the test group, who were required to do so, received replies and bookings as often and as quickly as the control group did. This remained true for either ``contact me'' or ``book it" inquiries; in both cases, the effect of requiring longer messages was negligible. In light of this, it is my recommendation that the message requirement not be expanded and rather discontinued. There is no tangible benefit while serving as an additional hurdle to booking.  
+
+\section{Analysis}
+
+\subsection{Data}
+To study the effect of the message length requirement on booking experience, I was given an initial dataset of 10,000 booking requests made by guests to various listings in 2013. For each booking request, either the treatment was assigned, in which case the guest had to write a message of at least 140 characters, or the control was assigned, in which case the guest booked as normal. 9,094 unique guests made booking requests in the data set, of which 764 had multiple requests. 3,669 unique hosts received requests, of which 1,988 received multiple requests. \par
+From this initial data set, I removed several small groups of observations. 
+\begin{itemize}
+    \item I removed one guest who made a booking request to the same listing twice, once receiving the control and once the treatment. Since it was only one observation and it would be hard to disentangle the effect of multiple booking requests for the same listing, I excluded it.
+    \item A group of 730 booking requests were nominally assigned to the treatment group, but did not actually write 140 character messages. Since they didn't truly receive the treatment while presumably receiving some sort of intervention, I excluded them from the dataset. 
+    \item 44 of the booking requests were made as ``instant bookings", which were booked automatically when requested. Since this clearly precludes the message length having any effect, I also removed these from the dataset.
+\end{itemize}
+All together this left a cohort of 9,233 bookings, since several of the above groups overlapped. This final data set does include a group of 112 bookings where the timestamps indicate that the booking inquiry/request preceded the first reply from the host. This is impossible, but the differences were always less than two minutes. I left them in since these small discrepancies seemed indicative of a consistently small mismeasurement. These inquiries were likely replied to quickly, which happened often in the data, but the recored time was off by a few minutes. 
+
+\subsection{Results}
+Looking at the basic statistics within the remaining data, there is no cause to think the treatment makes a difference for booking. For the treatment group, $86.1\%$ of requests received a reply, as oppose to $85.3\%$ in the control group; however, only $21.0\%$ in the treatment group ultimately received a booking, while $21.2\%$ in the control group did. These differences are minor to the point of likely being insignificant. The time the to reply or booking is also similar in both groups, as is seen in the chart below.\\
+\includegraphics[width=19cm]{output_32_0} \\
+This graph shows that at each point in the first three days after a booking inquiry, the portion of guests who have been responded to or booked is no higher for the treatment than the control groups, irrespective of whether they submitted a ``contact me" or ``book it" inquiry. This pattern holds after this three day window as well. \par
+The experiment set up, where any person is equally likely to be in the treatment as the control group, should dictate, in theory, that this kind of basic statistic is all that is needed. For a large enough sample size, the two groups will be pretty much identical, and any differences between them should just be due to the treatment. However, in practice, one should verify that besides the treatment, the two groups are extremely similar. We see this here. The number making ``contact me" as opposed to ``book it" contacts differs by less than $1\%$. The number making queries on weekends differs by less than $.1\%$. The requests were made in different months and hours of the day in nearly the same portions. At a glance, the test and control group seem very similar besides the message requirement. \par
+Finally though, to be doubly sure and perform a rigorous statistical test, I fit a few regressions. The idea with regression is that rather than compare the outcome across one other variable, as I've done above, it compares it to across all variables at the same time. This helps ensure that one variable's effect isn't accidentally ascribed to another variable. I performed four regressions; the first two were logistic regressions which predict the probability of ever getting a reply or booking, and the last two were linear regressions predicting the log time until this reply or booking occurred, assuming it did. Dealing with the log time rather than actual time is largely a mathematical convenience; it ensures that negative times aren't predicted. In these regressions, I included the treatment, the sort of inquiry, and the time of day/week/year of the inquiry as variables. Though a number of these variables had very meaningful effects, for no regression was the effect of the treatment, even when combined with the sort of inquiry, statistically significant. This indicates that the treatment effect is either nonexistent, or too small to measure.
+
+\section{Conclusion}
+Based on these results, we can say pretty strongly conclude that forcing guests to write an 140 character message doesn't improve their odds of getting booked. This combined with the message requirement dictating more work to make an inquiry is a good reason to do away with it. However, we should keep in mind that ones chances of getting booked given an inquiry isn't the only measure of success Airbnb should be concerned with. For instance, it's within the realm of reason that the additional requirement to request a booking would dissuade some guests from initiating contact in the first place. This data set is inadequate to measure whether this is occurring, but it should certainly be a concern; fewer booking requests ultimately mean fewer bookings and less business.
+
+\section{Further Work}
+This analysis is a relatively simple one, and deeper examination could be done.  To start with, the regression model could be improved, culling variables that aren't meaningful and including interactions that are. More flexible regressions, such as generalized additive models, might be used. As well, one might leverage the repeated occurrence of certain guests and hosts in the data to mitigate unseen variables via self control methods. However, nothing in the data or problem suggests this is necessary; its unlikely these analyses would yield a different conclusion. If this topic is still of interest, a more important extension would be to examine the treatment's effect on the rate at which guests make inquiries, though this would require different data. 
+
+\setlength{\voffset}{0cm}
+\setlength{\hoffset}{0cm}
+
+\includepdf[pages=-]{airbnb_takehome}
+
+\setlength{\voffset}{-2.54cm}
+\setlength{\hoffset}{-2.54cm}
+\end{document} 
+
