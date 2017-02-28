@@ -22,15 +22,15 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[left=0.6in,top=0.5in,right=0.6in,bottom=0.5in]{geometry} % Document margins
 
 \renewcommand{\labelitemii}{$\diamond$}
 \renewcommand{\labelitemiii}{$-$}
 
 \name{Aaron Maurer} % Your name
 \address{610~$\cdot$~717~$\cdot$~8858 \\ ajmaurer89@gmail.com} % Your phone number and email
-\address{www.github.com/ajmaurer}
-\address{1267 Page St, Apt F \\ San Francisco, CA 94117}
+%\address{www.github.com/ajmaurer}
+\address{115A Park St \\ San Francisco, CA 94110}
 
 \begin{document}
 
@@ -39,9 +39,9 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Summary}
-I am an experienced statistician and data scientist with a zeal for answering hard questions with big data. After spending three years analyzing huge Medicare data sets at Acumen LLC, I went back to get my Master's in Statistics. Now I'm looking for a company that could use my help gaining insights and predictions from its data. 
+I am an experienced machine learning data scientist and statistician on the search ranking team at Airbnb.
 
-{\bf Specialties:} Nonparametric, Bayesian, and Classical Statistics; Large Scale Data Mining; Machine Learning; Regression Analysis; Mathematical Optimization; Econometric Modeling
+{\bf Specialties:} Machine Learning; Production Data Pipelines; Online Experimentation; Nonparametric, Bayesian, and Classical Statistics; Large Scale Data Analysis.
 
 \end{rSection}
 
@@ -52,27 +52,10 @@ I am an experienced statistician and data scientist with a zeal for answering ha
 \begin{rSection}{Technical Skills}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Programing Languages 	& Python, Stata, SAS, R, SQL, Visual Basic, Some MATLAB \\
-Programing Tools   	    & Apache Spark, AWS EC2, MapReduce, \LaTeX, Git, SVN \\
+    Programing Languages 	& Python, Scala, R, SQL (Hive/Presto/MySQL), Stata, SAS, Some Ruby \\
+Programing Tools   	    & Apache Spark, Airflow, AWS, MapReduce, Hadoop, Jupyter, Git, \LaTeX\\
 
 \end{tabular}
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Education}
-
-    {\bf Masters of Science in Statistics} \hfill {\em Expected August 2015} \\
-    University of Chicago - Chicago, Illinois \\
-    Thesis: {\em Using Probabilistic Knockoffs of Binary Variables to Control the False Discovery Rate} \\
-    Selected Coursework: Machine Learning and Large-Scale Data Analysis, Bayesian Analysis, Nonparametric Inference, Convex Optimization, Mathematical Statistics, Generalized Linear Regression
-
-
-    {\bf Bachelor of Arts in Mathematics \& History, Cum Laude} \hfill {\em June 2011} \\ 
-    Carleton College - Northfield, Minnesota  \\
-    Distinction in the Math Major, Sigma Xi, Varsity Football \& Track
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
@@ -84,72 +67,58 @@ Programing Tools   	    & Apache Spark, AWS EC2, MapReduce, \LaTeX, Git, SVN \\
 %----------------------------------------------
 \vspace{0.2em}
 
+{\bf Airbnb} \hfill San Francisco, CA \\
+{\em Machine Learning Data Scientist, Search Ranking} \hfill {\em August 2015 - Present} \vspace{0.3em} 
+\vspace{-0.2em}
+\begin{itemize} \itemsep -0.2em
+    \item Trained and implemented new versions of the GBM-based ranking algorithm. Contributed to 4.5\% cumulative increase in bookings across ranking team.
+        \vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Conceived, trained, and tested online a series of models with improved labeling of guest rejections. Experiment analysis and subsequent deep dives into model guided further development.
+        \end{itemize}
+    \item Built and maintained Airflow/Hive/Scala/Spark data pipelines for online features and training data.
+        \vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Built generalized anomaly detection framework into ETL processes which caught hundreds of feature issues and prevented search service degradation. Provided Slack alerting to identify issues.
+        \end{itemize}
+    \item Oversaw search ranking experiments, guiding their design, methodology, and interpretation.
+        \vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Implemented stratified estimators in company-wide, Ruby experimentation application and Hive data pipelines, reducing bias and cutting experimentation time by up to 20\%.
+            \item Built Pyspark sequential testing pipeline to properly control false positive rate from experiments as actually run. Currently scaling process and evangelizing for broader use.
+        \end{itemize}
+    \item Conducted ad hoc data analysis to understand current algorithm behavior and opportunities.
+        \vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Performed retrospective of offline DCG metrics vs online performance, which pinpointed limits of our existing offline evaluation and sped up further model iteration.
+            %\item Identified default query parameters as driver of poor dateless results, driving ultimate solution.
+        \end{itemize}
+
+\end{itemize}
+
+
 {\bf Acumen, LLC} \hfill Burlingame, CA \\
 {\em Policy Associate} \hfill {\em August 2011 - August 2014} \vspace{0.3em} 
 \vspace{-0.2em}
 \begin{itemize} \itemsep -0.2em
-    \item Provided analytical and programing expertise to federal agencies studying healthcare  topics.
-	\item Cleaned huge Medicare data sets, compiled statistics, and built statistical models in Stata and SAS to provide prediction or inference for these studies.
+    \item Provided analytical and programing expertise to federal agencies studying healthcare  topics, guiding \$25 billion in spending and monitoring safety of millions of vaccinations.
+    \item Performed data analysis on and statistical modeling of entire enrolled Medicare population.
     \item Worked with federal clients to develop analysis and explicate results; produced data visualization and documentation to assist client understanding. 
-    \item Project work included:
-    \begin{itemize} \itemsep -0.2em
-    	\item {\bf \em Market and Enrollment Projections of the Affordable Care 		Act}
-        \begin{itemize} \itemsep -0.2em
-    		\item Developed microsimulation model to estimate ACA's effect on each individual. 	
-            \item Employed series of probit regressions on person level variables to predict future enrollment. 
-            \item Forecast federal budget implications, guiding \$25 billion in federal spending.
-    	\end{itemize}
-    	\item {\bf \em Flu Vaccine Comparative Effectiveness}
-        \begin{itemize} \itemsep -0.2em
-            \item Studying vaccine effectiveness presented difficulty due to distinct populations receiving the vaccine, outcome mismeasurement, and the variable latent infection risk. 
-    		\item Carefully designed comparable test and control cohorts from Medicare enrollees.
-            \item Implemented and tested a number of regression models to account for remaining issues, including proportional hazard and measurement error models. 
-    	\end{itemize}
-
-    	\item {\bf \em Financial Projections of Policy Reform}
-        \begin{itemize} \itemsep -0.2em
-    		\item Projected budget impact of Bipartisan Policy Center Medicare reform program.
-            \item Developed a log-normal mixture model to simulate beneficiary level expenditures.
-            \item Total net cost forecasts included in final report on the Domenici-Rivlin plan
-    	\end{itemize}
-        \item {\bf \em Active Surveillance of Flu Vaccine Safety}
-        \begin{itemize} \itemsep -0.2em
-        	\item Tracked approximately 15 million yearly vaccinations in Medicare population for cases of Guillain-Barre syndrome.
-            \item Employed sequential probability test to signal when hazard was above historical levels as quickly as possible.
-        \end{itemize}
-    \end{itemize}
 \end{itemize}
 \end{rSection}
 
 \vspace{0.4em}
-%----------------------------------------------------------------------------------------
-%   Selected Projects	
-%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Other Selected Projects}
-    \begin{itemize}
-        \item Used City of Chicago crime database to estimate weather's effect on citywide number of robberies.
-            \begin{itemize} 
-                \item Implemented Kernel and Poisson regressions on hourly crime counts across three years in R.
-                \item Models estimated change in robbery rate with temperature by hour and day of week.
-            \end{itemize}
-        \item Employed Bayesian Latent Dirichlet Allocation model to categorize Wikipedia articles by topics.
-            \begin{itemize} 
-                \item Utilized python Onlineldavb package to download and parse $12,\!800$ random articles on which to estimate topic posterior distributions.   
-                \item Using topic weighting as a low dimensional representation of each article, fit k-medians \\clustering to group similar articles.
-            \end{itemize}
-        \item Built L2 regularized logistic regression model to predict sentiment across $1.5$ million tweets.
-            \begin{itemize} 
-                \item Parsed tweets into $4,\!000$ word/emoticon feature vector in parallel using pyspark.
-                \item Fit model with stochastic gradient descent, choosing optimal parameters via cross validation.
-            \end{itemize}
-        \item Created models to predict overall review score for RateBeer.com reviews based on description.
-            \begin{itemize} 
-                \item Built feature vector of tf-idf statistics of hashed words over 3 million review corpus.
-                \item Fit both random forest and gradient boosted trees using Spark MLLib on AWS EC2.
-            \end{itemize}
+\begin{rSection}{Education}
 
-    \end{itemize} 
+    {\bf Masters of Science in Statistics} \hfill {\em August 2015} \\
+    University of Chicago - Chicago, Illinois \\
+    %Thesis: {\em Using Probabilistic Knockoffs of Binary Variables to Control the False Discovery Rate} \\
+    \vspace{-1.2em}
+
+    {\bf Bachelor of Arts in Mathematics \& History, Cum Laude} \hfill {\em June 2011} \\ 
+    Carleton College - Northfield, Minnesota  \\
+    %Distinction in the Math Major, Sigma Xi, Varsity Football \& Track
 \end{rSection}
 
 
@@ -158,20 +127,20 @@ Programing Tools   	    & Apache Spark, AWS EC2, MapReduce, \LaTeX, Git, SVN \\
 %	Publications
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Publications}
-\begin{itemize}
-    \item W. Baird, A. Beveridge, A. Bonato, P. Codenotti, J. MacCauley, A. Maurer, S. Valeva, ``On the minimal order of k-cop-win graphs", {\em Contributions to Discrete Mathematics}, Vol. 9, No. 1 (2014), pp. 1-15 
-    \item Hector Izurieta et al., ``Comparative effectiveness of high-dose versus standard-dose influenza vaccines in US residents aged 65 years and older from 2012 to 2013 using Medicare data: a retrospective cohort analysis", {\em The Lancet}, Vol 15, No. 3 (2015), pp. 293-300 
-\end{itemize}
-\end{rSection}
+%\begin{rSection}{Publications}
+%\begin{itemize}
+%    \item W. Baird, A. Beveridge, A. Bonato, P. Codenotti, J. MacCauley, A. Maurer, S. Valeva, ``On the minimal order of k-cop-win graphs", {\em Contributions to Discrete Mathematics}, Vol. 9, No. 1 (2014), pp. 1-15 
+%    \item Hector Izurieta et al., ``Comparative effectiveness of high-dose versus standard-dose influenza vaccines in US residents aged 65 years and older from 2012 to 2013 using Medicare data: a retrospective cohort analysis", {\em The Lancet}, Vol 15, No. 3 (2015), pp. 293-300 
+%\end{itemize}
+%\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %   Misc	
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Miscellaneous/Personal} 
-    Erdos Number of 3; has or will soon visit all but 4 of continuous 48 states; expert on Byzantine military history; former member of International Brotherhood of Teamsters; avid board game player 
-\end{rSection}
+%\begin{rSection}{Miscellaneous/Personal} 
+%    Erdos Number of 3; has or will soon visit all but 4 of continuous 48 states; expert on Byzantine military history; former member of International Brotherhood of Teamsters; avid board game player 
+%\end{rSection}
 
 
 %----------------------------------------------------------------------------------------
