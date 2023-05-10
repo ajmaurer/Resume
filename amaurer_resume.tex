@@ -23,6 +23,15 @@
 \documentclass{resume} % Use the custom resume.cls style
 
 \usepackage[left=0.6in,top=0.5in,right=0.6in,bottom=0.5in]{geometry} % Document margins
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 
 \renewcommand{\labelitemii}{$\diamond$}
 \renewcommand{\labelitemiii}{$-$}
@@ -30,7 +39,6 @@
 \name{Aaron Maurer} % Your name
 \address{610~$\cdot$~717~$\cdot$~8858 \\ ajmaurer89@gmail.com} % Your phone number and email
 %\address{www.github.com/ajmaurer}
-\address{115A Park St \\ San Francisco, CA 94110}
 
 \begin{document}
 
@@ -39,9 +47,9 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Summary}
-I am an experienced machine learning data scientist and statistician on the search ranking team at Airbnb.
+Experienced technical and people leader of machine learning software teams seeking new challenge.
 
-{\bf Specialties:} Machine Learning; Production Data Pipelines; Online Experimentation; Nonparametric, Bayesian, and Classical Statistics; Large Scale Data Analysis.
+{\bf Specialties:} Search and Recommendation Systems; Data Engineering and Production Data Pipelines; Identifying and Bootstrapping ML Use Cases; Statistics and Online Experimentation; Data Analysis
 
 \end{rSection}
 
@@ -52,8 +60,8 @@ I am an experienced machine learning data scientist and statistician on the sear
 \begin{rSection}{Technical Skills}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-    Programing Languages 	& Python, Scala, R, SQL (Hive/Presto/MySQL), Stata, SAS, Some Ruby \\
-Programing Tools   	    & Apache Spark, Airflow, AWS, MapReduce, Hadoop, Jupyter, Git, \LaTeX\\
+Programing Languages 	& Python, Scala, Java, PHP/Hack, SQL (Hive/Presto/MySQL) \\
+Programing Tools   	    & Apache Spark, Airflow, AWS, Kubernetes, Jupyter, Git \\
 
 \end{tabular}
 \end{rSection}
@@ -67,39 +75,62 @@ Programing Tools   	    & Apache Spark, Airflow, AWS, MapReduce, Hadoop, Jupyter
 %----------------------------------------------
 \vspace{0.2em}
 
-{\bf Airbnb} \hfill San Francisco, CA \\
-{\em Machine Learning Data Scientist, Search Ranking} \hfill {\em August 2015 - Present} \vspace{0.3em} 
+{\bf Slack} \\
+{\em Senior Software Engineer Manager} \hfill {\em February 2022 - Present}  \vspace{0.1em} 
+\begin{itemize} \itemsep -0.2em
+	\item Lead 10 person infrastructure engineering organization of two teams
+	\vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Machine Learning collaborates with product teams to incorporate ML/AI features.
+            \item Real Time Services manages services to stream messages to Slack clients
+        \end{itemize}
+    \item Developed engineer on ML team as a manager and handed off direct management to her
+    \item Managed transition from vendor to homegrown ML model serving service, saving \$400k/yr
+\end{itemize}
+{\em Software Engineer Manager} \hfill {\em May 2021 - February 2022} \vspace{0.1em} 
+\begin{itemize} \itemsep -0.2em
+	\item Manged Machine Learning team, developing team strategy and growing team from 1 to 5 engineers
+	\item Worked with product leaders to identify impactful ML use cases around org and lead collaboration.
+	\item Developed ML infra/tooling strategy to serve various product needs.
+	\vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+            \item Guided development of our generic recommendation engine the \href{https://slack.engineering/recommend-api/}{Recommend API} 
+            \item Managed transition to kubernetes based model training infra, saving \$500k/yr
+        \end{itemize}
+\end{itemize}
+{\em Staff Software Engineer, Machine Learning} \hfill {\em February 2020 - April 2021} \vspace{0.1em} 
+\begin{itemize} \itemsep -0.2em
+	\item Technical Lead of the Machine Learning Team
+	\item Leader in developing our embedding search service for users and channels, developing methodology and pipeline for both semantic and interaction based embeddings.
+	\item Built out recommendation API on top of embedding service and on-boarded product teams
+\end{itemize} 
+{\em Senior Software Engineer, Machine Learning} \hfill {\em June 2017 - February 2020} \vspace{0.1em} 
+\begin{itemize} \itemsep -0.2em
+	\item Primarily focused on developing ranking models for message search, file search, and autocomplete
+	\vspace{-0.2em}
+        \begin{itemize} \itemsep -0.2em
+        	\item Built foundational data pipelines for training and developed search wide product metrics
+        	\item Developed training methodology, including sampling, ranking objectives, position bias adjustments
+		\end{itemize}
+	\item Built unified feature pipelines and collections to aggregate CTR/interaction stats for various entities
+	\item Developed spam model to automate blocking Slack invite spam - see \href{https://slack.engineering/blocking-slack-invite-spam-with-machine-learning/}{blog post}.
+	\item Built anomaly detection framework, catching numerous performance/logging regressions
+	\item Developed logging and metrics to track time spent in Slack as part of drive towards public offering
+\end{itemize}
+
+{\bf Airbnb} \\
+{\em Machine Learning Data Scientist, Search Ranking} \hfill {\em August 2015 - June 2017} \vspace{0.1em} 
 \vspace{-0.2em}
 \begin{itemize} \itemsep -0.2em
     \item Trained and implemented new versions of the GBM-based ranking algorithm. Contributed to 4.5\% cumulative increase in bookings across ranking team.
-        \vspace{-0.2em}
-        \begin{itemize} \itemsep -0.2em
-            \item Conceived, trained, and tested online a series of models with improved labeling of guest rejections. Experiment analysis and subsequent deep dives into model guided further development.
-        \end{itemize}
     \item Built and maintained Airflow/Hive/Scala/Spark data pipelines for online features and training data.
-        \vspace{-0.2em}
-        \begin{itemize} \itemsep -0.2em
-            \item Built generalized anomaly detection framework into ETL processes which caught hundreds of feature issues and prevented search service degradation. Provided Slack alerting to identify issues.
-        \end{itemize}
-    \item Oversaw search ranking experiments, guiding their design, methodology, and interpretation.
-        \vspace{-0.2em}
-        \begin{itemize} \itemsep -0.2em
-            \item Implemented stratified estimators in company-wide, Ruby experimentation application and backing Hive data pipelines, reducing bias and cutting experimentation time by up to 20\%.
-            \item Built Pyspark sequential testing pipeline to properly control false positive rate from experiments as actually run. Currently scaling process and evangelizing for broader use.
-        \end{itemize}
-    \item Conducted ad hoc data analysis to understand current algorithm behavior and opportunities.
-        \vspace{-0.2em}
-        \begin{itemize} \itemsep -0.2em
-            \item Performed retrospective of offline DCG metrics vs online performance, which pinpointed limits of our existing offline evaluation and sped up further model iteration.
-            %\item Identified default query parameters as driver of poor dateless results, driving ultimate solution.
-        \end{itemize}
-
+    \item Oversaw search ranking experiments, guiding their design, methodology, and interpretation. Developed stratified estimators and sequential testing methodologies.
+    \item Conducted ad hoc data analysis to understand current algorithm behavior and opportunities, including retrospective of offline DCG metrics vs online performance.
 \end{itemize}
 
 
 {\bf Acumen, LLC} \hfill Burlingame, CA \\
-{\em Policy Associate} \hfill {\em August 2011 - August 2014} \vspace{0.3em} 
-\vspace{-0.2em}
+{\em Policy Associate} \hfill {\em August 2011 - August 2014} \vspace{0.1em} 
 \begin{itemize} \itemsep -0.2em
     \item Provided analytical and programing expertise to federal agencies studying healthcare  topics, guiding \$25 billion in spending and monitoring safety of millions of vaccinations.
     \item Performed data analysis on and statistical modeling of entire enrolled Medicare population.
@@ -121,7 +152,13 @@ Programing Tools   	    & Apache Spark, Airflow, AWS, MapReduce, Hadoop, Jupyter
     %Distinction in the Math Major, Sigma Xi, Varsity Football \& Track
 \end{rSection}
 
-
+\begin{rSection}{Patents}
+\begin{itemize}
+	\item US-11297030-B2 -  Embeddings-based discovery and exposure of communication platform features
+	\item US-20220284030-A1 - Methods, Apparatuses and Computer Program Products for Outputting Improved Autosuggestions in a Group-Based Communication Platform
+	\item US-11297030-B2 - Optimizing application performance with machine learning
+\end{itemize}
+\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	Publications
